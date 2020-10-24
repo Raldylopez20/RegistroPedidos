@@ -1,0 +1,39 @@
+﻿<Window x:Class="RegistroPedidos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroPedidos"
+        mc:Ignorable="d"
+        Title="Menu Principal" Height="400" Width="400">
+     <Grid>
+        <StackPanel>
+            <!--——————————————————————————————————————————————[ MENU ITEMS ]——————————————————————————————————————————————-->
+            <Menu Height="24" FontSize="15">
+
+                <MenuItem Header="Registros">
+
+                    <MenuItem x:Name="rPedidos" Click="rPedidosButton_Click" Header="Registrar Pedido"/>
+                </MenuItem>
+
+                <MenuItem Header="Consultas">
+                     <MenuItem x:Name="cPedidosMenuItem" Click="cPedidosMenuItem_Click" Header="Consultar Pedido"/>
+                </MenuItem>
+
+                <MenuItem Header="Ayuda">
+                    <Menu/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+
+        <!--——————————————————————————————————————————————[ MENU PRINCIPAL ]——————————————————————————————————————————————-->
+
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <Label Content="Menu Principal" FontWeight="Bold" Height="50" FontSize="36" HorizontalAlignment="Center" />
+
+
+        </StackPanel>
+    </Grid>
+</Window>
