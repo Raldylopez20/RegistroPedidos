@@ -87,8 +87,16 @@ namespace RegistroPedidos.UI.Registro
             }
         }
         //—————————————————————————————————————————————————————[ AGREGAR FILA ]—————————————————————————————————————————————————————
-        private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
+       private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
+
         {
+           if (SuplidorIdComboBox.Text == string.Empty)
+            {
+                MessageBox.Show($"El campo Suplidor Id esta vacio.\n\nSeleccione un Suplidor.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                SuplidorIdComboBox.IsDropDownOpen = true;
+                return;
+            }
+            Productos producto = (Productos)ProductoIdComboBox.SelectedItem;
             var filaDetalle = new OrdenesDetalle
             {
                 OrdenId = this.ordenes.OrdenId,
@@ -96,7 +104,7 @@ namespace RegistroPedidos.UI.Registro
                 productos = (Productos)ProductoIdComboBox.SelectedItem,
                 Cantidad = Convert.ToInt32(CantidadTextBox.Text)
             };
-
+              ordenes.Monto = producto.Costo * int.Parse(CantidadTextBox.Text);
             this.ordenes.Detalle.Add(filaDetalle);
             Cargar();
 
@@ -109,6 +117,9 @@ namespace RegistroPedidos.UI.Registro
         {
             if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
             {
+                var detalle = (OrdenesDetalle)DetalleDataGrid.SelectedItem;
+                    
+                ordenes.Monto = ordenes.Monto - (detalle.productos.Costo * (int)detalle.Cantidad);
                 ordenes.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
                 Cargar();
             }

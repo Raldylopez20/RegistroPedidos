@@ -1,19 +1,19 @@
 ﻿RegistroPedidos
-1.0.0.0
+
 
 winexe
 C#
 .cs
-c:\Users\pc\Desktop\RegistroPedidos\obj\Debug\netcoreapp3.1\
+C:\Users\pc\Desktop\RegistroPedidos\obj\Debug\netcoreapp3.1\
 RegistroPedidos
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-c:\Users\pc\Desktop\RegistroPedidos\App.xaml
-3-1112911177
-6-1011917088
-191953357513
-216262318794
+C:\Users\pc\Desktop\RegistroPedidos\App.xaml
+3-1769562656
+6-402456811
+171512698388
+216-69677745
 MainWindow.xaml;UI\Consultas\cPedidos.xaml;UI\Registro\rPedidos.xaml;
 
 False
